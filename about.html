@@ -2,30 +2,48 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8">
-      <meta name="viewport" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>About</title>
+      <!--custom css element-->
       <style>
+         featured-text {
+            display: block;
+            border-left: 5px solid #3a3944;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #ffaef4;
+            font-style: italic;
+         }
       </style>
+      <!--custom hello world element-->
       <script>
+         class HelloWebsite extends HTMLElement {
+            constructor() {
+               super();
+               console.log("Hello World!");
+            }
+         }
+         customElements.define('hello-website', HelloWebsite);
       </script>
    </head>
-
    <body>
+      <hello-website></hello-website>
       <header>
          <nav>
-            <button type="button">Home</button>
-            <button type="button">About Me</button>
-            <button type="button">Education</button>
-            <button type="button">Projects</button>
-            <button type="button">Contact</button>
+            <a href="/index.html">home</a> |
+            <a href="/about.html">about</a> |
+            <a href="/education.html">education</a> |
+            <a href="/projects.html">projects</a>|
+            <a href="/contact.html">contact</a>
          </nav>
       </header>    
       <h1>About me page</h1>
       <h3><strong>below you can learn more about who i am</strong></h3>
+      <p>hello my name is viann i am a <span>computer science major</span> at ucsd.</p>
       <picture>
          <img src="test.png" alt="picture test"/>
       </picture>
-      <p>testing paragraph bio about me</p>
+      <p>testing paragraph bio</p>
       <br>
       <section>
          <h2>Skills section</h2>
@@ -35,6 +53,7 @@
       </section>
       <section>
          <h2>Goals section</h2>
+         <progress value="0.5" max="1"></progress>
          <em>test subtitle</em>
          <p>paragraph about goals</p>
          <ul>
@@ -48,19 +67,24 @@
       <section>
          <h2>Interests section</h2>
          <em>test subtitle</em>
+         <section>
+            <featured-text>
+               some featured text
+            </featured-text>
+         </section>
          <p>paragraph about my interests</p>
          <div>
             <picture>
                <img src="games.png" alt="thumbnail for games part"/>
             </picture>
-            <button type="button">Games I like</button>  
+            <a href="/games.html">games i like</a> 
             <br> 
          </div>
          <div>
             <picture>
                <img src="art.png" alt="thumbnail for art part"/>
             </picture>
-            <button type="button">My Art</button>
+            <a href="/art.html">my art</a>
             <br>
          </div>
       </section>         
